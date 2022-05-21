@@ -8,7 +8,6 @@ import { CATEGORIES, TASKS } from "../data";
 //console.log({ CATEGORIES, TASKS });
 
 function App() {
-  const [formInput, setFormInput] = useState({})
   const [tasks, setTasks]=useState([...TASKS])
 
   function deleteCallBack(event){
@@ -23,16 +22,16 @@ function App() {
     setTasks([...updatedTasks])
   }
 
-  function onTaskFormSubmit(event){
-    event.preventDefault()
-    debugger
-    setFormInput((obj)=>{ obj.text = "fish"; obj.category = 'Code'
-  });
+
+  function onTaskFormSubmit(newOBJ){
+    
+   
 
     setTasks(tasks =>
-      [...tasks, formInput]
+      [...tasks, newOBJ]
       )
   }
+
 
   return (
     <div className="App">
@@ -51,3 +50,15 @@ export default App;
 Pass the tasks array to TaskList
 
 */
+
+
+  // function onTaskFormSubmit(event){
+  //   event.preventDefault()
+  //   debugger
+  //   setFormInput((obj)=>{ obj.text = "fish"; obj.category = 'Code'
+  // });
+
+  //   setTasks(tasks =>
+  //     [...tasks, formInput]
+  //     )
+  // }
